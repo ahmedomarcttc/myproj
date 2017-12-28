@@ -1,0 +1,1 @@
+1bf2e20a8340256bf8800aa849322b0c  l4fw_vnfd.yaml

@@ -1,0 +1,1 @@
+b9d57ea3e91d31e91894bcbb2c034285  http_vnfd.yaml

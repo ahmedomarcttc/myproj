@@ -1,0 +1,2 @@
+5dd9637d0a7965165ce47c371a2b93b1  l4fw_vnfd.yaml
+9d5abdd652157909a0ac00ed796dcbb0  icons/sonata.png
