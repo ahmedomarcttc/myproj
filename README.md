@@ -2,7 +2,6 @@
 MyProj
 
 1. Installed OSM R3 from binaries (first option in etsi.osm.org website) using the Nested containers.
-
 Although the installation process is well documented, I am rewriting the process,
 
 	a. In a fresh Ubuntu 16.04 (64-bit variant required) VM do the following for LXD configuration
