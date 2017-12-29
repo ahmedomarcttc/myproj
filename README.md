@@ -1,5 +1,5 @@
-# myproj
-MyProj
+# My Project
+MyProj description
 
 1. Installed OSM R3 from binaries (first option in etsi.osm.org website) using the Nested containers.
 
@@ -70,50 +70,50 @@ Although the installation process is well documented, I am rewriting the process
 		To access the OSM Launchpad we need to route traffic from the Host Machine to the Host Container. After running the "lxc list" command we have,
 
 		testbed@framework:~$ lxc list
-    +-------+---------+--------------------------------+------+------------+-----------+
-    | NAME  |  STATE  |              IPV4              | IPV6 |    TYPE    | SNAPSHOTS |
-    +-------+---------+--------------------------------+------+------------+-----------+
-    | osmr3 | RUNNING | 10.173.200.1 (lxdbr0)          |      | PERSISTENT | 0         |
-    |       |         | 10.160.50.193 (eth0)           |      |            |           |
-    +-------+---------+--------------------------------+------+------------+-----------+
+		+-------+---------+--------------------------------+------+------------+-----------+
+		| NAME  |  STATE  |              IPV4              | IPV6 |    TYPE    | SNAPSHOTS |
+		+-------+---------+--------------------------------+------+------------+-----------+
+		| osmr3 | RUNNING | 10.173.200.1 (lxdbr0)          |      | PERSISTENT | 0         |
+		|       |         | 10.160.50.193 (eth0)           |      |            |           |
+		+-------+---------+--------------------------------+------+------------+-----------+
 		Now we run the following command,
 		testbed@framework:~$ sudo route add -net 10.173.200.0/24 gw 10.160.50.193
 
-		d.  Now, Open a browser (Chrome in my case) and use the following URL,
-			https://10.173.200.238:8443
+	d.  Now, Open a browser (Chrome in my case) and use the following URL,
+		https://10.173.200.238:8443
 
 2. The process of installing the VIM-EMU tool is very easy and it is also shown in the ETSI OSM website (https://osm.etsi.org/wikipub/index.php/VIM_emulator). However I have created a bash file which does the whole process with one command.
 
-		a. Run the file "vimemu-install.sh" (which is myproj/scripts/) so,
-			testbed@framework:~$ cd myproj/scripts/
-			testbed@framework:~$ chmod +x vimemu-install.sh #when downloaded for the first time
-			testbed@framework:~$ ./vimemu-install.sh
+	a. Run the file "vimemu-install.sh" (which is myproj/scripts/) so,
+		testbed@framework:~$ cd myproj/scripts/
+		testbed@framework:~$ chmod +x vimemu-install.sh #when downloaded for the first time
+		testbed@framework:~$ ./vimemu-install.sh
 
-		b. Now we can run emulated Network topologies just like in mininet. In our case we run the file "demo_topo.py" to emulate a 2pop network.
-			testbed@framework:~$ cd myproj/scripts/
-			testbed@framework:~$ sudo python demo_topo.py
-			.
-			.
-			containernet>
+	b. Now we can run emulated Network topologies just like in mininet. In our case we run the file "demo_topo.py" to emulate a 2pop network.
+		testbed@framework:~$ cd myproj/scripts/
+		testbed@framework:~$ sudo python demo_topo.py
+		.
+		.
+		containernet>
 
-		c. To see the emulator dashboard we can use the following link in a browser,
-		 	http://127.0.0.1:5001/dashboard/index_upb.html
+	c. To see the emulator dashboard we can use the following link in a browser,
+		http://127.0.0.1:5001/dashboard/index_upb.html
 
 3. It is time to get some VNFs and NSs running,
 
-		a. Create and attach the POPs (which are emulated in topology) in the RO container
-			export OPENMANO_TENANT=osm
-			openmano tenant-create osm
-			openmano datacenter-create pop1 http://172.31.255.1:6001/v2.0 --type openstack --description "osm-pop1"
-			openmano datacenter-create pop2 http://172.31.255.1:6002/v2.0 --type openstack --description "osm-pop2"
-			openmano datacenter-attach pop1 --user=username --password=password --vim-tenant-name=tenantName
-			openmano datacenter-attach pop2 --user=username --password=password --vim-tenant-name=tenantName
+	a. Create and attach the POPs (which are emulated in topology) in the RO container
+		export OPENMANO_TENANT=osm
+		openmano tenant-create osm
+		openmano datacenter-create pop1 http://172.31.255.1:6001/v2.0 --type openstack --description "osm-pop1"
+		openmano datacenter-create pop2 http://172.31.255.1:6002/v2.0 --type openstack --description "osm-pop2"
+		openmano datacenter-attach pop1 --user=username --password=password --vim-tenant-name=tenantName
+		openmano datacenter-attach pop2 --user=username --password=password --vim-tenant-name=tenantName
 
-		b. There are some example VNFs and NS in /myproj/osm_vnf/pkggen folder,
-			testbed@framework:~$ cd myproj/osm_vnf/pkggen/
-			testbed@framework:~/myproj/osm_vnf/pkggen$ ./pack.sh
+	b. There are some example VNFs and NS in /myproj/osm_vnf/pkggen folder,
+		testbed@framework:~$ cd myproj/osm_vnf/pkggen/
+		testbed@framework:~/myproj/osm_vnf/pkggen$ ./pack.sh
 
-		c. In the OSM Launchpad login using Username- admin Password- admin
-			.
-			.
-			Rest coming soon!!!!
+	c. In the OSM Launchpad login using Username- admin Password- admin
+		.
+		.
+		Rest coming soon!!!!
