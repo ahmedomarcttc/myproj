@@ -82,7 +82,9 @@ Although the installation process is well documented, I am rewriting the process
 	d.  Now, Open a browser (Chrome in my case) and use the following URL,
 		https://10.173.200.238:8443
 
-2. The process of installing the VIM-EMU tool is very easy and it is also shown in the ETSI OSM website (https://osm.etsi.org/wikipub/index.php/VIM_emulator). However I have created a bash file which does the whole process with one command.
+2. The process of installing the VIM-EMU tool is very easy and it is also shown in the ETSI OSM website (https://osm.etsi.org/wikipub/index.php/VIM_emulator).
+
+However I have created a bash file which does the whole process with one command.
 
 
 	a. Run the file "vimemu-install.sh" (which is myproj/scripts/) so,
