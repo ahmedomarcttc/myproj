@@ -84,6 +84,7 @@ Although the installation process is well documented, I am rewriting the process
 
 2. The process of installing the VIM-EMU tool is very easy and it is also shown in the ETSI OSM website (https://osm.etsi.org/wikipub/index.php/VIM_emulator). However I have created a bash file which does the whole process with one command.
 
+
 	a. Run the file "vimemu-install.sh" (which is myproj/scripts/) so,
 		testbed@framework:~$ cd myproj/scripts/
 		testbed@framework:~$ chmod +x vimemu-install.sh #when downloaded for the first time
@@ -100,6 +101,7 @@ Although the installation process is well documented, I am rewriting the process
 		http://127.0.0.1:5001/dashboard/index_upb.html
 
 3. It is time to get some VNFs and NSs running,
+
 
 	a. Create and attach the POPs (which are emulated in topology) in the RO container
 		export OPENMANO_TENANT=osm
