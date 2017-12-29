@@ -104,6 +104,7 @@ However I have created a bash file which does the whole process with one command
 
 3. It is time to get some VNFs and NSs running,
 
+....
 
 	a. Create and attach the POPs (which are emulated in topology) in the RO container
 		export OPENMANO_TENANT=osm
