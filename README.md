@@ -20,7 +20,7 @@ Although the installation process is well documented, I am rewriting the process
 		 LXD has been successfully configured.
 	(Set a fix value for the MTU)
 		lxc list
-		ip address show ens3
+		ip address show enp0s3
 		ip address show lxdbr0
 		sudo lxc profile device set default eth0 mtu 1446
 	(For testing)
