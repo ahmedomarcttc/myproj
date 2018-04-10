@@ -1,0 +1,50 @@
+vnfd:
+  id: "ad5d356f-435f-4e3f-983f-1c7ed09871fd"
+  name: "vnf1"
+  short-name: "vnf1"
+  vendor: "AOS"
+  description: "A simple VNF descriptor w/ one VDU for ping"
+  version: "1.0"
+  vnf-configuration: {}
+  mgmt-interface: {}
+  connection-point: 
+     - 
+       name: "vnf1-cp0"
+       type: "VPORT"
+     - 
+       name: "vnf1-cp1"
+       type: "VPORT"
+  vdu: 
+     - 
+       id: "ubuntu"
+       name: "ubuntu"
+       description: "Ubuntu:trusty"
+       count: 1
+       vm-flavor: 
+          vcpu-count: 1
+          memory-mb: 512
+          storage-gb: 10
+       guest-epa: 
+          cpu-pinning-policy: "ANY"
+       image: "\"ubuntu:trusty\""
+       vdu-configuration: {}
+       supplemental-boot-data: 
+          boot-data-drive: "false"
+       interface: 
+          - 
+            name: "vnf1-eth0"
+            position: 0
+            type: "EXTERNAL"
+            external-connection-point-ref: "vnf1-cp0"
+            virtual-interface: 
+               type: "VIRTIO"
+            floating-ip-needed: "false"
+          - 
+            name: "vnf1-eth1"
+            position: 1
+            type: "EXTERNAL"
+            external-connection-point-ref: "vnf1-cp1"
+            virtual-interface: 
+               type: "VIRTIO"
+            floating-ip-needed: "false"
+  service-function-chain: "UNAWARE"
