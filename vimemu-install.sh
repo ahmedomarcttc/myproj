@@ -27,4 +27,4 @@ sudo py.test -v src/emuvim/test/unittests
 
 echo "Run demo topology"
 cd
-sudo python myproj/scripts/demo_topo.py
+sudo python myproj/demo_topo.py
